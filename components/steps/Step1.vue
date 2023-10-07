@@ -1,5 +1,5 @@
 <template>
-    <div class=" w-full max-w-[720px] mx-auto flex flex-col items-start space-y-4 ">
+    <div class=" w-full max-w-[720px] mx-auto flex flex-col items-start md:space-x-7 space-y-4 ">
        <div class=" w-full flex items-center space-x-2">
             <div class="text-[#0487AF] flex items-center space-x-1">
                 <span>1</span>
@@ -7,7 +7,7 @@
             </div>
             <h1 class="text-[#C23C3B]  text-xl">What is your preferred Vehicle Type?*</h1>
        </div>
-       <div class="w-full max-w-[648px] grid grid-cols-4 gap-2 ">
+       <div class="w-full max-w-[648px] grid grid-cols-2 sm:grid-cols-4 gap-2 ">
             <CarCard  :class="{'flash':item.is_active}" v-for="(item,index,key) in cars" :key="key" :image='item.image' :title="item.title" :is_active='item.is_active' @click="select(item)"/>
        </div>
     </div>
@@ -15,7 +15,6 @@
 
 <script setup>
  import CarCard from "@/components/UI/CarCard.vue";
- const showFlash = ref(false);
  const emit = defineEmits(['nextStep']);
  const cars = ref([
     {
