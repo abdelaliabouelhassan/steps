@@ -1,44 +1,43 @@
 <template>
   <StepsContainer ref="StepsContainerRef" :count="count">
     <template #step1>
-      <div>
-        <h1>Step 1</h1>
-        <button @click="next">Next</button>
-    <button @click="prev">Prev</button>
-      </div>
+     <Step1 @nextStep="next"/>
     </template>
     <template #step2>
-      <h1>Step 2</h1>
+      <Step2 @nextStep="next"/>
     </template>
     <template #step3>
-      <h1>Step 3</h1>
+      <Step2 @nextStep="next"/>
     </template>
     <template #step4>
-      <h1>Step 3</h1>
+       <Step2 @nextStep="next"/>
     </template>
 
 
-    
-  </StepsContainer>
 
-  
+  </StepsContainer>
 </template>
 
 
 
 <script setup>
- const count = 4; // number of steps
+
+import Step1 from '@/components/steps/Step1.vue';
+import Step2 from '@/components/steps/Step2.vue';
 
 
- import StepsContainer from '@/components/StepsContainer.vue';
- const StepsContainerRef = ref(null);
+const count = 4; // number of steps
 
- const next = () => {
+
+import StepsContainer from '@/components/StepsContainer.vue';
+const StepsContainerRef = ref(null);
+
+const next = () => {
   StepsContainerRef.value.nextStep();
- }
+}
 
- const prev = () => {
+const prev = () => {
   StepsContainerRef.value.prevStep();
- }
+}
 
 </script>
