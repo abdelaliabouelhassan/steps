@@ -1,5 +1,5 @@
 <template>
-  <StepsContainer ref="StepsContainerRef" :count="count">
+  <StepsContainer ref="StepsContainerRef"  :count="count">
     <template #step1>
      <Step1 @nextStep="next"/>
     </template>
@@ -18,9 +18,6 @@
       <template #step6>
        <Step6 @nextStep="next"/>
     </template>
-
-
-
   </StepsContainer>
 </template>
 
